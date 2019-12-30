@@ -167,7 +167,7 @@ input {
 .wrap_user_center .btn-wrap {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.13rem;
 }
 
 .wrap_user_center .btn {
@@ -362,7 +362,7 @@ li.red {
 
 .wrap_passport_txt_xg {
     height: 0.52rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
     font-family: '微软雅黑';
     -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -390,7 +390,7 @@ li.red {
 
 .wrap_passport_txt {
     height: 0.6rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
 }
 
 .passpor_txt01 {
@@ -399,7 +399,7 @@ li.red {
     width: 1.6rem;
     font-size: 0.3rem;
     text-align: right;
-    font-family: '微软雅黑'; height;0.55rem; line-height: 0.55rem;
+    font-family: '微软雅黑'; height:0.5rem; line-height: 0.5rem;
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -408,7 +408,7 @@ li.red {
     float: left;
     font-size: 0.3rem;
     width: 4rem;
-    height: 0.54rem;
+    height: 0.49rem;
     background: #fff;
     border: 2px solid #d6e1de;
     border-radius: 0.05rem;
@@ -419,10 +419,10 @@ li.red {
     border: none;
     width: 3.6rem;
     padding-left: 0.2rem;
-    height: 0.54rem;
+    height: 0.49rem;
     font-size: 0.3rem;
     overflow: hidden;
-    line-height: 0.54rem;
+    line-height: 0.49rem;
     background: none;
     color: #808080;
 }
@@ -432,7 +432,7 @@ li.red {
     float: left;
     font-size: 0.3rem;
     width: 2.4rem;
-    height: 0.54rem;
+    height: 0.49rem;
     background: #d7d0c5;
     margin-right: 0.2rem;
     background: #fff;
@@ -445,10 +445,10 @@ li.red {
     border: none;
     width: 2rem;
     padding-left: 0.2rem;
-    height: 0.54rem;
+    height: 0.49rem;
     font-size: 0.3rem;
     overflow: hidden;
-    line-height: 0.54rem;
+    line-height: 0.49rem;
     background: none;
     color: #808080;
 }
@@ -460,8 +460,8 @@ span.yzm {
     background: none;
     color: #ea744a;
     text-align: center;
-    height: 0.5rem;
-    line-height: 0.5rem;
+    height: 0.45rem;
+    line-height: 0.45rem;
     font-size: 0.3rem;
     padding-bottom: 0.03rem;
     border-bottom: 2px solid #ea744a
