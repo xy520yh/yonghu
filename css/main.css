@@ -142,7 +142,7 @@ input {
 .wrap_user {
     margin: 0 auto;
     max-width: 10rem;
-    padding-top: 0.3rem;
+    padding-top: 0.2rem;
     padding-left: 0.4rem;
     padding-right: 0.4rem;
     padding-bottom: 0.4rem;
@@ -167,12 +167,12 @@ input {
 .wrap_user_center .btn-wrap {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .wrap_user_center .btn {
     width: 3rem;
-    height: 0.7rem;
+    height: 0.6rem;
     padding: 0.02rem;
     border: 1px solid #d5ebe0;
 }
