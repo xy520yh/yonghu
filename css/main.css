@@ -361,7 +361,7 @@ li.red {
 }
 
 .wrap_passport_txt_xg {
-    height: 0.52rem;
+    height: 0.51rem;
     margin-bottom: 0.15rem;
     font-family: '微软雅黑';
     -webkit-font-smoothing: subpixel-antialiased;
@@ -568,7 +568,7 @@ select.sources {
     float: left;
     font-size: 0.22rem;
     width: 4rem;
-    height: 0.5rem;
+    height: 0.48rem;
     background: #fff;
     border: 2px solid #d6e1de;
     border-radius: 0.05rem;
