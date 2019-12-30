@@ -20,6 +20,40 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
+       <style>
+   #out{
+        width: 10rem;
+        height: 8rem;
+        position: absolute;
+        left: 0.5rem;
+        top: 2rem;
+        overflow: hidden;
+    }
+    #con{
+        width: 9.6rem;
+        padding: 0.05rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    #box{
+        width: 0.08rem;
+        height: 6rem;
+        position: absolute;
+        right: 0;
+        top: 0;background:#f00;
+    }
+    #drag{
+        width: 0.08rem;
+        height: 0.31rem;
+        background:url(images/handler.png) no-repeat #fff;
+    	
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+   </style>
 </head>
 
 <body id="section1">
@@ -42,7 +76,8 @@
                 </span>
                 </div>
             </div>
-            <div class="ul_list">
+            <div id="out">
+            <div class="ul_list" id="con">
                 <h3 class="gray"><span class="sq01">订单号</span><span class="sq02">充值金额</span><span class="sq03">下单时间</span><span class="sq04">订单状态</span></h3>
                 <ul class="list">
 
@@ -63,6 +98,10 @@
 
                 </ul>
             </div>
+            <div id="box">
+                    <p id="drag"></p>
+                </div>
+           </div>
 
             <!--<div class="img_row"><img src="images/btn_28.png"/></div>-->
         </div>
@@ -73,7 +112,116 @@
 
 
     <script type="text/javascript" src="js/index.js"></script>
-
+<script>
+  var out=document.getElementById('out');
+    var con=document.getElementById('con');
+    var box=document.getElementById('box');
+    var drag=document.getElementById('drag');
+    //鼠标点击拖动部分
+    drag.onmousedown=function (ev){
+        var e=ev||window.event;
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else{
+            e.returnValue=false;
+        };
+        //鼠标点击位置距离拖动组件顶部的距离
+        var d_bkt=e.clientY-drag.offsetTop;
+        //鼠标拖动函数
+        document.onmousemove=function (ev){
+            var e=ev||window.event;
+            var top=e.clientY-d_bkt;
+            if (top<=0) {
+                top=0;
+            };
+            if (top>=box.clientHeight-drag.clientHeight) {
+                top=box.clientHeight-drag.clientHeight;
+            };
+            //计算滚动比例
+            var scale=top/(box.clientHeight-drag.clientHeight);
+            //滚动区域的滚动距离
+            var cony=scale*(con.clientHeight-out.clientHeight);
+            drag.style.top=top+'px';
+            con.style.top=-cony+'px';
+            console.log(top);
+        }
+        document.onmouseup=function (){
+            document.onmousemove=null;
+        }
+    }
+    //以下为鼠标滚轮事件
+    var str=window.navigator.userAgent.toLowerCase();
+    if (str.indexOf('firefox')!=-1) {//火狐浏览器
+        out.addEventListener('DOMMouseScroll',function (e){
+            e.preventDefault();//阻止窗口默认的滚动事件
+        if (e.detail<0) {//下滚
+            var t=con.offsetTop+20;
+            if (t>=0) {
+                t=0;
+            };
+            if (t<=-(con.clientHeight-out.clientHeight)) {
+                t=-(con.clientHeight-out.clientHeight);
+            };
+            //计算滚动条和滚动区域的滚动比例
+            var scale=t/(con.clientHeight-out.clientHeight);
+            //滚动区域的滚动距离
+            var top=scale*(box.clientHeight-drag.clientHeight);
+            con.style.top=t+'px';
+            drag.style.top=-top+'px';
+        };
+        if (e.detail>0) {//上滚
+            var t=con.offsetTop-20;
+            if (t>=0) {
+                t=0;
+            };
+            if (t<=-(con.clientHeight-out.clientHeight)) {
+                t=-(con.clientHeight-out.clientHeight);
+            };
+            var scale=t/(con.clientHeight-out.clientHeight);
+            var top=scale*(box.clientHeight-drag.clientHeight);
+            con.style.top=t+'px';
+            drag.style.top=-top+'px';
+        };
+        },false);
+    } else{//非火狐浏览器
+        out.onmousewheel=function (ev){
+            var e=ev||window.event;
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else{
+                e.returnValue=false;
+            };
+            if (e.wheelDelta>0) {//下滚
+            var t=con.offsetTop+20;
+            if (t>=0) {
+                t=0;
+            };
+            if (t<=-(con.clientHeight-out.clientHeight)) {
+                t=-(con.clientHeight-out.clientHeight);
+            };
+            var scale=t/(con.clientHeight-out.clientHeight);
+            var top=scale*(box.clientHeight-drag.clientHeight);
+            con.style.top=t+'px';
+            drag.style.top=-top+'px';
+        };
+        if (e.wheelDelta<0) {//上滚
+            var t=con.offsetTop-20;
+            if (t>=0) {
+                t=0;
+            };
+            if (t<=-(con.clientHeight-out.clientHeight)) {
+                t=-(con.clientHeight-out.clientHeight);
+            };
+            //设置滚动比例
+            var scale=t/(con.clientHeight-out.clientHeight);
+            //设置滚动区域的滚动距离
+            var top=scale*(box.clientHeight-drag.clientHeight);
+            con.style.top=t+'px';
+            drag.style.top=-top+'px';
+        };
+        }
+    };
+</script>
 </body>
 
 </html>
