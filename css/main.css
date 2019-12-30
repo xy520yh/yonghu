@@ -262,17 +262,17 @@ input {
     border-radius: 0.05rem;
     text-align: center;
     background: #fff;
-	height:3.9rem;
+	height:3.2rem;
 }
 
 h3.gray {
     display: flex;
     justify-content: space-between;
     background: #f0f0f0;
-    font-size: 0.3rem;
+    font-size: 0.26rem;
     color: #808080;
-    height: 0.55rem;    
-    line-height: 0.55rem;
+    height: 0.5rem;    
+    line-height: 0.5rem;
     margin: 0.01rem 0.02rem;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
@@ -281,11 +281,11 @@ h3.gray {
 .ul_list li {
     display: flex;
     justify-content: space-between;
-    height: 0.5rem;
-    line-height: 0.5rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
     border-bottom: 2px dashed #e3e1df;
     background: #fff;
-    font-size: 0.24rem;
+    font-size: 0.22rem;
 }
 
 .list {
@@ -293,7 +293,7 @@ h3.gray {
     padding: 0 0.2rem;
 	overflow-y: auto;
     overflow-x: hidden;
-	height:3.2rem;
+	height:2.6rem;
 }
 
 .sq01 {
